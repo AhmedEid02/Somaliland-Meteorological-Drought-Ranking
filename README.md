@@ -1,5 +1,5 @@
 README.md
-# Somaliland Meteorological Drought Ranking (1981–2024) — CHIRPS (Gu MAM & Deyr OND)
+# Somaliland Meteorological Drought Ranking (1981–2024) — CHIRPS (Gu (MAM) & Deyr (OND))
 
 This mini project ranks Somaliland’s worst **meteorological (rainfall-only) drought seasons** using **CHIRPS rainfall** for:
 - **Gu (MAM)**: March–April–May  
