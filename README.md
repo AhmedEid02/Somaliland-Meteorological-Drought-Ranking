@@ -144,30 +144,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 .gitignore
 
-This keeps the repo clean and avoids accidental uploads of temporary R files or OS junk.
-
-# ---------------------------
-# OS / Editor
-# ---------------------------
-.DS_Store
-Thumbs.db
-*.swp
-*.tmp
-
-# ---------------------------
-# R / RStudio
-# ---------------------------
-.Rhistory
-.RData
-.Ruserdata
-.Rproj.user/
-*.Rproj
-
-# ---------------------------
-# Outputs (keep tracked if you WANT outputs in repo)
-# If you prefer NOT to version outputs, uncomment these:
-# outputs/
-# ---------------------------
 
 # ---------------------------
 # Large raster files
