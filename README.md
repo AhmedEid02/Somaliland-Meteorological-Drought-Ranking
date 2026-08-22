@@ -145,10 +145,4 @@ SOFTWARE.
 .gitignore
 
 
-# ---------------------------
-# Large raster files
-# If you want to keep GeoTIFFs in GitHub, COMMENT these two lines
-# and use Git LFS instead.
-# ---------------------------
-# *.tif
-# *.tiff
+
