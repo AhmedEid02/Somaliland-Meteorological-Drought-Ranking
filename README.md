@@ -81,78 +81,81 @@ This is an operational threshold adopted for this analysis, not a claim that sim
 
 Compound deficits meeting the 80%-of-normal threshold in both seasons were uncommon in the reported analysis. These findings describe **seasonal rainfall departures**; they do not rank overall drought damages or human consequences.
 
-### Figures
+### Figures and visual outputs
 
-The analysis documents three intended graphical outputs. **The PNG files must be committed to `outputs/figures/` on the `main` branch before these can be linked or displayed here.**
+The following figures are available in the repository; each link opens the actual PNG file on GitHub.
 
-| Output | Expected file | Description |
-|---|---|---|
-| Seasonal ranking | `Top10_Gu_Deyr_Combined_Polished.png` | Ranked Gu and Deyr rainfall-deficit years |
-| Compound seasonal deficits | `Compound_Drought_Scatter_Polished.png` | Joint Gu–Deyr rainfall conditions |
-| Spatial anomalies | `MAP_PANEL_FINAL_SHAREDLEGEND.png` | Four-panel anomaly maps with a shared legend |
+| Research output | Figure |
+|---|---|
+| Gu and Deyr: top-ten rainfall-deficit seasons | [View combined rankings](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Top10_Gu_Deyr_Combined_Polished.png) |
+| Simultaneous Gu–Deyr seasonal rainfall deficits | [View compound drought scatterplot](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Compound_Drought_Scatter_Polished.png) |
+| Spatial patterns of selected rainfall anomalies | [View clean 2 × 2 anomaly map](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/MAP_PANEL_2x2_Somaliland_Anomalies_Clean.png) |
+| Alternative CHIRPS map panel | [View CHIRPS anomaly maps](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/MAP_PANEL_2x2_Somaliland_CHIRPS_Anomalies.png) |
+| Separate Gu rankings | [View Gu top-ten figure](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Gu_Top10.png) |
+| Separate Deyr rankings | [View Deyr top-ten figure](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Deyr_Top10.png) |
 
-## Expected repository structure
+![Gu and Deyr drought-season rankings](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Top10_Gu_Deyr_Combined_Polished.png)
 
-The following tree documents the intended file layout. Some referenced scripts, data files, and outputs have not yet been verified in the public repository.
+*Figure 1. Historical Gu and Deyr seasonal rainfall-deficit rankings.*
 
+![Compound seasonal rainfall deficits](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures/Compound_Drought_Scatter_Polished.png)
+
+*Figure 2. Joint Gu–Deyr rainfall conditions and the compound-deficit threshold.*
+
+## Repository structure
+
+The following paths reflect the files and folders verified on the `main` branch in October 2026:
 
 ```text
 .
 ├── README.md
-├── LICENSE
-├── .gitignore
-├── scripts/
-│   ├── gee/
-│   │   └── 01_chirps_seasonal_drought_ranking.js
-│   └── r/
-│       ├── 01_analysis_tables_figures.R
-│       └── 02_maps_panel_shared_legend.R
-├── data/
-│   ├── tables/
-│   │   ├── Somaliland_Gu_MAM_CHIRPS_Table_1981_2024.csv
-│   │   ├── Somaliland_Gu_MAM_Top10_DroughtYears_1981_2024.csv
-│   │   ├── Somaliland_Deyr_OND_CHIRPS_Table_1981_2024.csv
-│   │   └── Somaliland_Deyr_OND_Top10_DroughtYears_1981_2024.csv
-│   └── geotiff/
-│       ├── Somaliland_Gu_MAM_Anomaly_mm_2022_vs_1981_2010.tif
-│       ├── Somaliland_Gu_MAM_Anomaly_mm_2009_vs_1981_2010.tif
-│       ├── Somaliland_Deyr_OND_Anomaly_mm_1986_vs_1981_2010.tif
-│       └── Somaliland_Deyr_OND_Anomaly_mm_2020_vs_1981_2010.tif
-└── outputs/
-    ├── figures/
-    │   ├── Top10_Gu_Deyr_Combined_Polished.png
-    │   ├── Compound_Drought_Scatter_Polished.png
-    │   └── MAP_PANEL_FINAL_SHAREDLEGEND.png
-    └── tables/
-        ├── Gu_MAM_Top5.csv
-        └── Deyr_OND_Top5.csv
+└── Somaliland-Meteorological-Drought-Ranking/
+    ├── 02_R_Script/
+    │   └── Somaliland-Meteorological-Drought-Ranking.R
+    ├── Data/
+    │   ├── CSV/
+    │   │   ├── Somaliland_Gu_MAM_CHIRPS_Table_1981_2024.csv
+    │   │   ├── Somaliland_Gu_MAM_Top10_DroughtYears_1981_2024.csv
+    │   │   ├── Somaliland_Deyr_OND_CHIRPS_Table_1981_2024.csv
+    │   │   └── Somaliland_Deyr_OND_Top10_DroughtYears_1981_2024.csv
+    │   └── GeoTiff/
+    │       ├── Somaliland_Gu_MAM_Anomaly_mm_2022_vs_1981_2010.tif
+    │       ├── Somaliland_Gu_MAM_Anomaly_mm_2009_vs_1981_2010.tif
+    │       ├── Somaliland_Deyr_OND_Anomaly_mm_1986_vs_1981_2010.tif
+    │       └── Somaliland_Deyr_OND_Anomaly_mm_2020_vs_1981_2010.tif
+    ├── 03_Outputs/
+    │   ├── Figures/
+    │   │   ├── Top10_Gu_Deyr_Combined_Polished.png
+    │   │   ├── Compound_Drought_Scatter_Polished.png
+    │   │   ├── Gu_Top10.png
+    │   │   ├── Deyr_Top10.png
+    │   │   ├── MAP_PANEL_2x2_Somaliland_Anomalies_Clean.png
+    │   │   └── MAP_PANEL_2x2_Somaliland_CHIRPS_Anomalies.png
+    │   └── tables/
+    │       ├── Gu_MAM_Top5.csv
+    │       └── Deyr_OND_Top5.csv
+    └── LICENSE (MIT).md
 ```
 
 ## Reproducing the analysis
 
-**Repository completeness:** The script and data paths below describe the intended workflow. Ensure those files are uploaded before treating these steps as reproducible from a fresh clone.
-
 ### Requirements
 
-- Access to [Google Earth Engine](https://earthengine.google.com/) and the Code Editor.
-- Access to the Somaliland boundary asset used in the GEE script, or an equivalent boundary asset with its path updated in the script.
-- R and RStudio (or another R execution environment), with the packages referenced in the two R scripts installed.
+- Access to [Google Earth Engine](https://earthengine.google.com/) for the CHIRPS extraction stage and permission to use an appropriate Somaliland study-area boundary.
+- R and the packages called in the [R analysis script](Somaliland-Meteorological-Drought-Ranking/02_R_Script/Somaliland-Meteorological-Drought-Ranking.R).
+- Input CSV tables from the [Data/CSV directory](Somaliland-Meteorological-Drought-Ranking/Data/CSV).
 
-### Step 1 — Prepare seasonal precipitation data in GEE
+### 1. Obtain or reproduce CHIRPS seasonal data
 
-Run `scripts/gee/01_chirps_seasonal_drought_ranking.js` in the Earth Engine Code Editor. Confirm that the study-area asset reference is available and that the year ranges, seasons, and baseline match the settings documented above. Export the seasonal tables to `data/tables/` and anomaly rasters to `data/geotiff/`.
+The repository includes exported [seasonal rainfall tables](Somaliland-Meteorological-Drought-Ranking/Data/CSV) and [rainfall-anomaly GeoTIFFs](Somaliland-Meteorological-Drought-Ranking/Data/GeoTiff). These are sufficient to inspect the published outputs. The current public tree does **not** contain a standalone GEE JavaScript extraction script; reproducing the upstream data extraction requires an independently configured Earth Engine workflow and study-area asset.
 
-### Step 2 — Produce analysis tables and figures in R
+### 2. Inspect and run the R analysis
 
-Run `scripts/r/01_analysis_tables_figures.R` with the working directory set to the repository root. This script reads the exported seasonal tables and generates drought-rank tables and summary figures under `outputs/`.
+Review the [R analysis script](Somaliland-Meteorological-Drought-Ranking/02_R_Script/Somaliland-Meteorological-Drought-Ranking.R) and update its working-directory and input-file paths as needed. Use the published CSV data to recreate calculations and graphical products supported by that script; a clean-environment, end-to-end reproduction has not been independently validated here.
 
-### Step 3 — Produce spatial anomaly maps
+### 3. Compare outputs with published figures
 
-Run `scripts/r/02_maps_panel_shared_legend.R`. This script reads the GeoTIFF files from `data/geotiff/` and exports the multi-panel map to `outputs/figures/`.
-
-### Step 4 — Review outputs
-
-Check that both seasonal summaries, the compound-deficit plot, and the spatial maps have been generated, and that values match the reported baseline and season definitions.
+Inspect the [figures folder](Somaliland-Meteorological-Drought-Ranking/03_Outputs/Figures) and [summary tables](Somaliland-Meteorological-Drought-Ranking/03_Outputs/tables). Verify the 1981–2010 baseline, seasonal windows (Gu=MAM and Deyr=OND), ranking definitions, and the compound seasonal deficit threshold before interpreting or extending the results.
 
 ## Interpretation and limitations
 
@@ -180,4 +183,4 @@ No archived software DOI or tagged release is currently documented.
 **Ahmed Hussein Ismail** — Climate and geospatial researcher, Somaliland  
 [GitHub](https://github.com/AhmedEid02) · [Research portfolio](https://ahmedeid02.github.io/)
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](Somaliland-Meteorological-Drought-Ranking/LICENSE%20%28MIT%29.md).
