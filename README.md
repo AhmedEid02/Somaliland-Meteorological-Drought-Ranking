@@ -91,8 +91,6 @@ The analysis documents three intended graphical outputs. **The PNG files must be
 | Compound seasonal deficits | `Compound_Drought_Scatter_Polished.png` | Joint Gu–Deyr rainfall conditions |
 | Spatial anomalies | `MAP_PANEL_FINAL_SHAREDLEGEND.png` | Four-panel anomaly maps with a shared legend |
 
-Once committed, replace the file names above with working Markdown image links, such as `[View compound-drought plot](outputs/figures/Compound_Drought_Scatter_Polished.png)`.
-
 ## Expected repository structure
 
 The following tree documents the intended file layout. Some referenced scripts, data files, and outputs have not yet been verified in the public repository.
