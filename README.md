@@ -45,17 +45,17 @@ For each season and year, seasonal rainfall is calculated from CHIRPS precipitat
 
 **Rainfall anomaly (mm)**
 
-\[
-A_{y,s} = P_{y,s} - \overline{P}_{1981\text{–}2010,s}
-\]
+$$
+A_{y,s} = P_{y,s} - \overline{P}_{1981-2010,s}
+$$
 
 **Percentage of normal rainfall (%)**
 
-\[
-N_{y,s} = 100 \times \frac{P_{y,s}}{\overline{P}_{1981\text{–}2010,s}}
-\]
+$$
+N_{y,s} = 100 \times \frac{P_{y,s}}{\overline{P}_{1981-2010,s}}
+$$
 
-where \(P_{y,s}\) is the seasonal rainfall total in year \(y\) and season \(s\), and \(\overline{P}_{1981\text{–}2010,s}\) is the corresponding baseline mean. Lower percentages indicate greater rainfall deficits relative to that season's climatology.
+where $P_{y,s}$ is the seasonal rainfall total in year $y$ and season $s$, and $\overline{P}_{1981-2010,s}$ is the corresponding baseline mean. Lower percentages indicate greater rainfall deficits relative to that season's climatology.
 
 ### Drought rankings
 
@@ -65,9 +65,9 @@ Gu and Deyr seasons are ranked separately based on rainfall deficits relative to
 
 A year is classified as having **compound seasonal rainfall deficit** when both seasons meet the predefined threshold:
 
-\[
+$$
 N_{y,Gu} \le 80\% \quad \text{and} \quad N_{y,Deyr} \le 80\%
-\]
+$$
 
 This is an operational threshold adopted for this analysis, not a claim that simultaneous deficits necessarily produced equivalent impacts across livelihoods or locations.
 
@@ -83,13 +83,20 @@ Compound deficits meeting the 80%-of-normal threshold in both seasons were uncom
 
 ### Figures
 
-The repository contains these prepared graphical outputs:
+The analysis documents three intended graphical outputs. **The PNG files must be committed to `outputs/figures/` on the `main` branch before these can be linked or displayed here.**
 
-- [`Top10_Gu_Deyr_Combined_Polished.png`](outputs/figures/Top10_Gu_Deyr_Combined_Polished.png) — ranked Gu and Deyr rainfall-deficit years.
-- [`Compound_Drought_Scatter_Polished.png`](outputs/figures/Compound_Drought_Scatter_Polished.png) — joint Gu–Deyr rainfall conditions and compound deficits.
-- [`MAP_PANEL_FINAL_SHAREDLEGEND.png`](outputs/figures/MAP_PANEL_FINAL_SHAREDLEGEND.png) — selected spatial rainfall-anomaly maps with a shared legend.
+| Output | Expected file | Description |
+|---|---|---|
+| Seasonal ranking | `Top10_Gu_Deyr_Combined_Polished.png` | Ranked Gu and Deyr rainfall-deficit years |
+| Compound seasonal deficits | `Compound_Drought_Scatter_Polished.png` | Joint Gu–Deyr rainfall conditions |
+| Spatial anomalies | `MAP_PANEL_FINAL_SHAREDLEGEND.png` | Four-panel anomaly maps with a shared legend |
 
-## Repository structure
+Once committed, replace the file names above with working Markdown image links, such as `[View compound-drought plot](outputs/figures/Compound_Drought_Scatter_Polished.png)`.
+
+## Expected repository structure
+
+The following tree documents the intended file layout. Some referenced scripts, data files, and outputs have not yet been verified in the public repository.
+
 
 ```text
 .
@@ -125,6 +132,8 @@ The repository contains these prepared graphical outputs:
 
 ## Reproducing the analysis
 
+**Repository completeness:** The script and data paths below describe the intended workflow. Ensure those files are uploaded before treating these steps as reproducible from a fresh clone.
+
 ### Requirements
 
 - Access to [Google Earth Engine](https://earthengine.google.com/) and the Code Editor.
@@ -133,15 +142,15 @@ The repository contains these prepared graphical outputs:
 
 ### Step 1 — Prepare seasonal precipitation data in GEE
 
-Run [`scripts/gee/01_chirps_seasonal_drought_ranking.js`](scripts/gee/01_chirps_seasonal_drought_ranking.js) in the Earth Engine Code Editor. Confirm that the study-area asset reference is available and that the year ranges, seasons, and baseline match the settings documented above. Export the seasonal tables to `data/tables/` and anomaly rasters to `data/geotiff/`.
+Run `scripts/gee/01_chirps_seasonal_drought_ranking.js` in the Earth Engine Code Editor. Confirm that the study-area asset reference is available and that the year ranges, seasons, and baseline match the settings documented above. Export the seasonal tables to `data/tables/` and anomaly rasters to `data/geotiff/`.
 
 ### Step 2 — Produce analysis tables and figures in R
 
-Run [`scripts/r/01_analysis_tables_figures.R`](scripts/r/01_analysis_tables_figures.R) with the working directory set to the repository root. This script reads the exported seasonal tables and generates drought-rank tables and summary figures under `outputs/`.
+Run `scripts/r/01_analysis_tables_figures.R` with the working directory set to the repository root. This script reads the exported seasonal tables and generates drought-rank tables and summary figures under `outputs/`.
 
 ### Step 3 — Produce spatial anomaly maps
 
-Run [`scripts/r/02_maps_panel_shared_legend.R`](scripts/r/02_maps_panel_shared_legend.R). This script reads the GeoTIFF files from `data/geotiff/` and exports the multi-panel map to `outputs/figures/`.
+Run `scripts/r/02_maps_panel_shared_legend.R`. This script reads the GeoTIFF files from `data/geotiff/` and exports the multi-panel map to `outputs/figures/`.
 
 ### Step 4 — Review outputs
 
